@@ -7,13 +7,10 @@
 //
 
 import SpriteKit
-//0
 import GoogleMobileAds
 
 class GameScene: SKScene {
-    // 1
     var viewController: GameViewController!
-    // 2
     var bannerView: GADBannerView!
   
     override func didMoveToView(view: SKView) {
@@ -25,14 +22,13 @@ class GameScene: SKScene {
         
         self.addChild(myLabel)
       
-        // 3
         if bannerView == nil {
           initializeBanner()
         }
+      
         loadRequest()
     }
   
-    // 3
     func initializeBanner() {
       // Create a banner ad and add it to the view hierarchy.
       bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
@@ -41,11 +37,9 @@ class GameScene: SKScene {
       view!.addSubview(bannerView)
     }
   
-    // 4
     func loadRequest() {
-      bannerView.hidden = false
       let request = GADRequest()
-      request.testDevices = [kGADSimulatorID, "24ed9ee524b90565f5e15t23ad232415"]
+      request.testDevices = [kGADSimulatorID, "22ed9df524b90565f5e15t23ad232415"]
       bannerView.loadRequest(request)
     }
   

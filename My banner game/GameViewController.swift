@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         if let scene = GameScene(fileNamed:"GameScene") {
+          
             // Linking view controller and scene to show ads
             scene.viewController = self
           
